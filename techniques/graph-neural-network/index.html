@@ -33,6 +33,41 @@ Graph Neural Network - Call me Tommy
  
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qhjqhj00.github.io/tn.png"/>
@@ -67,6 +102,7 @@ Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义
 <meta property="og:image" content="https://qhjqhj00.github.io/tn.png"/>
 <meta property="article:published_time" content="2019-12-21T12:35:11-05:00" />
 <meta property="article:modified_time" content="2019-12-21T12:35:11-05:00" /><meta property="og:site_name" content="Call me Tommy" />
+
 
 
     
@@ -238,7 +274,10 @@ $$
             <a href="/techniques">he&#39;s a coder.</a>
         
             &#183; 
-            <a href="/mis">he can cook and play the guitar.</a>
+            <a href="/mis">he can cook.</a>
+        
+            &#183; 
+            <a href="/music">he plays the guitar.</a>
         
             &#183; 
             <a href="/about">who is he?</a>

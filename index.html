@@ -32,6 +32,41 @@ Call me Tommy
  
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qhjqhj00.github.io/tn.png"/>
@@ -45,6 +80,7 @@ Call me Tommy
 <meta property="og:url" content="https://qhjqhj00.github.io/" />
 <meta property="og:image" content="https://qhjqhj00.github.io/tn.png"/>
 <meta property="og:updated_time" content="2019-12-21T12:35:11-05:00" /><meta property="og:site_name" content="Call me Tommy" />
+
 
 
         <title>Call me Tommy</title>
@@ -68,7 +104,13 @@ Call me Tommy
                 
                     <div class="big-link">
                         <a href="/mis">
-                            he can cook and play the guitar.
+                            he can cook.
+                        </a>
+                    </div>
+                
+                    <div class="big-link">
+                        <a href="/music">
+                            he plays the guitar.
                         </a>
                     </div>
                 
