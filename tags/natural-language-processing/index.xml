@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natural Language Processing on Call me Tommy</title>
+    <link>https://qhjqhj00.github.io/tags/natural-language-processing/</link>
+    <description>Recent content in Natural Language Processing on Call me Tommy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Aug 2019 12:35:11 -0500</lastBuildDate>
+    
+	<atom:link href="https://qhjqhj00.github.io/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Key Techniques in NLP</title>
+      <link>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</link>
+      <pubDate>Mon, 05 Aug 2019 12:35:11 -0500</pubDate>
+      
+      <guid>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</guid>
+      <description>深度学习在自然语言处理中的关键技术  ​	本文主体部分翻译自Sebastian Ruder的推文，该推文在很多地方都有推荐。
+​	原文链接：http://ruder.io/deep-learning-nlp-best-practices/index.html#attention
+​	这篇推文总结了深度学习在自然处理语言中任务的实践范例，我在翻译中对内容有删减增改。平时我学习工作中每天都会阅读新公布的论文，一段时间后，发现自己收获有限，萌生了做笔记的想法（我的十八年求学生涯中从没做过笔记: ) )。
+​	翻译者 / 增补者：Hongjin
+1. 前述 ​	这篇推文总结了深度学习在自然处理语言中任务的实践范例。作者会定期更新本文，加入新涌现的实用技术和观点，也是我们对深度学习自然语言处理领域技术革新的追踪。
+​	过去几年，在我们这个领域有个经久不衰的笑话：遇到任何任务，直接上LSTM加注意力机制，节能获得一流的效果。而且这样的境况在过去几年几乎一尘不变。
+​	然而事情正在起变化，这一潭死水近来有了波澜，一些任务基准被新的模型刷新了。这也让我们这个行业一点点翻过LSTM这一页。面对这样的变化，我们应该以决绝的态度拥抱新模型，不要再拘于在LSTM的高楼上锦上添花，更不要挣扎于刷新某一个具体任务的成绩。
+​	阅读这篇推文前，你被假定对神经网络在自然语言处理中的应用已经有一些了解了，并对相关任务有过实践。最重要的，是对自然语言处理这个行业有着极大的热情。
+​	Tips: 不带缘由地假定什么是最好的有违公平性：依据是什么？是不是有更好的？所以，本文中提到的&amp;quot;最佳实践&amp;quot;一方面来自我个人的理解和经验，另一方面来自业界团队的评价。我也会尽可能为每个实践给出至少两个参考。
+2. 最佳实践 1). 词向量 ​	于情于理，词向量都是近来最广为人知的实践范例了。词向量对绝大多数自然语言任务裨益良多(Kim, 2014)[^f1]。词向量的最优维度在取决于不同任务：低维度的词向量往往适用于句法分析任务，如实体识别和词性识别(Melamud et al., 2016) (Plank et al., 2016) 12。而高维度词向量则更适用于语义分析任务，例如情感分析(Ruder et al., 2016)3。
+​	然而，近来随着语境化生成式词向量的兴起，句法分析任务的纪录榜单几乎都被高维度词向量模型占据了(Peters et al., 2018) (Devlin et al., 2018) (Akbik et al.,2018) (Baevski et al., 2019)4567。
+2). 深度 ​	尽管我们不会抵达视觉领域的层深，自然语言处理领域在深层网络上也略有进展。深度BiLSTM网络，通常由三四层那么深，在POS标注和语义角色标注任务上也取得了领先的成绩(Plank et al., 2016) (He et al.</description>
+    </item>
+    
+  </channel>
+</rss>

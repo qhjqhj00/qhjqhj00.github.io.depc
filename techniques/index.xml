@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Techniques on Call me Tommy</title>
+    <title>Posts on Call me Tommy</title>
     <link>https://qhjqhj00.github.io/techniques/</link>
-    <description>Recent content in Techniques on Call me Tommy</description>
+    <description>Recent content in Posts on Call me Tommy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 21 Feb 2020 12:21:57 -0500</lastBuildDate>
     
 	<atom:link href="https://qhjqhj00.github.io/techniques/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
-      <link>https://qhjqhj00.github.io/techniques/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Graph Neural Network</title>
+      <link>https://qhjqhj00.github.io/techniques/graph-neural-network/</link>
+      <pubDate>Sat, 21 Dec 2019 12:35:11 -0500</pubDate>
       
-      <guid>https://qhjqhj00.github.io/techniques/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <guid>https://qhjqhj00.github.io/techniques/graph-neural-network/</guid>
       <description>Basic Knowledge 1. Undirected Graph ​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。
 ​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：
   对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。
@@ -30,11 +31,11 @@ Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义
     </item>
     
     <item>
-      <title></title>
-      <link>https://qhjqhj00.github.io/techniques/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9C%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Key Techniques in NLP</title>
+      <link>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</link>
+      <pubDate>Mon, 05 Aug 2019 12:35:11 -0500</pubDate>
       
-      <guid>https://qhjqhj00.github.io/techniques/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9C%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/</guid>
+      <guid>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</guid>
       <description>深度学习在自然语言处理中的关键技术  ​	本文主体部分翻译自Sebastian Ruder的推文，该推文在很多地方都有推荐。
 ​	原文链接：http://ruder.io/deep-learning-nlp-best-practices/index.html#attention
 ​	这篇推文总结了深度学习在自然处理语言中任务的实践范例，我在翻译中对内容有删减增改。平时我学习工作中每天都会阅读新公布的论文，一段时间后，发现自己收获有限，萌生了做笔记的想法（我的十八年求学生涯中从没做过笔记: ) )。

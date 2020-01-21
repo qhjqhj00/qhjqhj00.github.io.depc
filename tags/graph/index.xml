@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph on Call me Tommy</title>
+    <link>https://qhjqhj00.github.io/tags/graph/</link>
+    <description>Recent content in Graph on Call me Tommy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Dec 2019 12:35:11 -0500</lastBuildDate>
+    
+	<atom:link href="https://qhjqhj00.github.io/tags/graph/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Graph Neural Network</title>
+      <link>https://qhjqhj00.github.io/techniques/graph-neural-network/</link>
+      <pubDate>Sat, 21 Dec 2019 12:35:11 -0500</pubDate>
+      
+      <guid>https://qhjqhj00.github.io/techniques/graph-neural-network/</guid>
+      <description>Basic Knowledge 1. Undirected Graph ​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。
+​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：
+  对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。
+  一个可以表述图中节点连接关系的矩阵，通常是一个邻接矩阵。
+  ​	输出一个节点级的矩阵$Z$: $(N \times F)$，$F$是输出的特征维度。图级的输出可以由节点级输出经过池化或类似的操作得到。
+​	每一层网络可以写成一个非线性函数： $$ H^{(l+1)}=f(H^{(l)},A) $$ ​	其中，$H^{(0)}=X$，$H^{(L)}=Z$，$L$是网络层数。不同的模型的差别在于如何构造函数$f(\cdot , \cdot)$。
+2. Directed Graph 3. 一个简单的示例 ​	那么，就用一个最简单的线性函数来表示一层网络的非线性转化： $$ f(H^{(l)},A)=\sigma(AH^{(l)}W^{(l)}) $$ ​	其中，$W^{(l)}$ 是一个第$l$层的权重矩阵，$\sigma(\cdot)$是一个非线性函数，比如$Sigmoid$或者$RELU$，这个公式尽管看起来很简单，但实际上很有效。
+​	但是呢，这个公式有两个缺点：和矩阵$A$相乘意味着，对于一个节点，所以与其相连的节点的特征会被求和，但其自身的特征没有得到保留（除非这个节点有一个self loop)。为解决:这个问题，我们可以手动给每个节点加一个self loop：仅需要给邻接矩阵$A$加上一个单位矩阵。
+​	第二个缺点就是邻接矩阵$A$通常来说都没有标准化。所以，与矩阵$A$相乘后会彻底改变特征的区间。标准化后每行的和为1，例如，我们可以让邻接矩阵$A$乘上一个对角节点度矩阵$D$：$D^{(-1)}A$就可以解决这个问题了。这么操作其实是取了与一个节点以及与其相邻节点特征的均值。实践中，我们发现使用对称标准化 (Symmetric Normalization) 往往能取得更好的效果，例如: $D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，但这样的操作就不再是对相邻特征取均值了。这样我们就能得到一个传播规则： $$ f(H^{(l)},A)=\sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}) $$ ​	其中，$\hat{A}=A+I$，$I$是标准矩阵，$\hat{D}$是$\hat{A}$的对角节点度矩阵。
+​	关于对角节点度矩阵，可以参考：https://zh.wikipedia.org/wiki/度数矩阵。
+Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义 ​	正则化的拉普拉斯矩阵（Normalized graph Laplacian matrix）: $L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$</description>
+    </item>
+    
+  </channel>
+</rss>
