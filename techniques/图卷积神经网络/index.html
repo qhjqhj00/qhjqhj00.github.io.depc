@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="A new Hugo site.">
+<title>
+ - Call me Tommy
+</title>
+
+
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.8838e9b23ac21efd16a4bff8ff077840765452fb485b7a4141652c7d2bc7799b.css" integrity="sha256-iDjpsjrCHv0WpL/4/wd4QHZUUvtIW3pBQWUsfSvHeZs=" crossorigin="anonymous" media="screen">
+
+
+
+ 
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://qhjqhj00.github.io/tn.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Basic Knowledge 1. Undirected Graph ​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。
+​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：
+  对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。
+  一个可以表述图中节点连接关系的矩阵，通常是一个邻接矩阵。
+  ​	输出一个节点级的矩阵$Z$: $(N \times F)$，$F$是输出的特征维度。图级的输出可以由节点级输出经过池化或类似的操作得到。
+​	每一层网络可以写成一个非线性函数： $$ H^{(l&#43;1)}=f(H^{(l)},A) $$ ​	其中，$H^{(0)}=X$，$H^{(L)}=Z$，$L$是网络层数。不同的模型的差别在于如何构造函数$f(\cdot , \cdot)$。
+2. Directed Graph 3. 一个简单的示例 ​	那么，就用一个最简单的线性函数来表示一层网络的非线性转化： $$ f(H^{(l)},A)=\sigma(AH^{(l)}W^{(l)}) $$ ​	其中，$W^{(l)}$ 是一个第$l$层的权重矩阵，$\sigma(\cdot)$是一个非线性函数，比如$Sigmoid$或者$RELU$，这个公式尽管看起来很简单，但实际上很有效。
+​	但是呢，这个公式有两个缺点：和矩阵$A$相乘意味着，对于一个节点，所以与其相连的节点的特征会被求和，但其自身的特征没有得到保留（除非这个节点有一个self loop)。为解决:这个问题，我们可以手动给每个节点加一个self loop：仅需要给邻接矩阵$A$加上一个单位矩阵。
+​	第二个缺点就是邻接矩阵$A$通常来说都没有标准化。所以，与矩阵$A$相乘后会彻底改变特征的区间。标准化后每行的和为1，例如，我们可以让邻接矩阵$A$乘上一个对角节点度矩阵$D$：$D^{(-1)}A$就可以解决这个问题了。这么操作其实是取了与一个节点以及与其相邻节点特征的均值。实践中，我们发现使用对称标准化 (Symmetric Normalization) 往往能取得更好的效果，例如: $D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，但这样的操作就不再是对相邻特征取均值了。这样我们就能得到一个传播规则： $$ f(H^{(l)},A)=\sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}) $$ ​	其中，$\hat{A}=A&#43;I$，$I$是标准矩阵，$\hat{D}$是$\hat{A}$的对角节点度矩阵。
+​	关于对角节点度矩阵，可以参考：https://zh.wikipedia.org/wiki/度数矩阵。
+Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义 ​	正则化的拉普拉斯矩阵（Normalized graph Laplacian matrix）: $L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$"/>
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Basic Knowledge 1. Undirected Graph ​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。
+​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：
+  对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。
+  一个可以表述图中节点连接关系的矩阵，通常是一个邻接矩阵。
+  ​	输出一个节点级的矩阵$Z$: $(N \times F)$，$F$是输出的特征维度。图级的输出可以由节点级输出经过池化或类似的操作得到。
+​	每一层网络可以写成一个非线性函数： $$ H^{(l&#43;1)}=f(H^{(l)},A) $$ ​	其中，$H^{(0)}=X$，$H^{(L)}=Z$，$L$是网络层数。不同的模型的差别在于如何构造函数$f(\cdot , \cdot)$。
+2. Directed Graph 3. 一个简单的示例 ​	那么，就用一个最简单的线性函数来表示一层网络的非线性转化： $$ f(H^{(l)},A)=\sigma(AH^{(l)}W^{(l)}) $$ ​	其中，$W^{(l)}$ 是一个第$l$层的权重矩阵，$\sigma(\cdot)$是一个非线性函数，比如$Sigmoid$或者$RELU$，这个公式尽管看起来很简单，但实际上很有效。
+​	但是呢，这个公式有两个缺点：和矩阵$A$相乘意味着，对于一个节点，所以与其相连的节点的特征会被求和，但其自身的特征没有得到保留（除非这个节点有一个self loop)。为解决:这个问题，我们可以手动给每个节点加一个self loop：仅需要给邻接矩阵$A$加上一个单位矩阵。
+​	第二个缺点就是邻接矩阵$A$通常来说都没有标准化。所以，与矩阵$A$相乘后会彻底改变特征的区间。标准化后每行的和为1，例如，我们可以让邻接矩阵$A$乘上一个对角节点度矩阵$D$：$D^{(-1)}A$就可以解决这个问题了。这么操作其实是取了与一个节点以及与其相邻节点特征的均值。实践中，我们发现使用对称标准化 (Symmetric Normalization) 往往能取得更好的效果，例如: $D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，但这样的操作就不再是对相邻特征取均值了。这样我们就能得到一个传播规则： $$ f(H^{(l)},A)=\sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}) $$ ​	其中，$\hat{A}=A&#43;I$，$I$是标准矩阵，$\hat{D}$是$\hat{A}$的对角节点度矩阵。
+​	关于对角节点度矩阵，可以参考：https://zh.wikipedia.org/wiki/度数矩阵。
+Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义 ​	正则化的拉普拉斯矩阵（Normalized graph Laplacian matrix）: $L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qhjqhj00.github.io/techniques/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" />
+<meta property="og:image" content="https://qhjqhj00.github.io/tn.png"/>
+<meta property="og:site_name" content="Call me Tommy" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title"></div>
+
+        <div class="section" id="content"><h1 id="basic-knowledge">Basic Knowledge</h1>
+<h3 id="1-undirected-graph">1. Undirected Graph</h3>
+<p>​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。</p>
+<p>​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：</p>
+<ul>
+<li>
+<p>对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。</p>
+</li>
+<li>
+<p>一个可以表述图中节点连接关系的矩阵，通常是一个邻接矩阵。</p>
+</li>
+</ul>
+<p>​	输出一个节点级的矩阵$Z$: $(N \times F)$，$F$是输出的特征维度。图级的输出可以由节点级输出经过池化或类似的操作得到。</p>
+<p>​	每一层网络可以写成一个非线性函数：
+$$
+H^{(l+1)}=f(H^{(l)},A)
+$$
+​	其中，$H^{(0)}=X$，$H^{(L)}=Z$，$L$是网络层数。不同的模型的差别在于如何构造函数$f(\cdot , \cdot)$。</p>
+<h3 id="2-directed-graph">2. Directed Graph</h3>
+<h3 id="3-一个简单的示例">3. 一个简单的示例</h3>
+<p>​	那么，就用一个最简单的线性函数来表示一层网络的非线性转化：
+$$
+f(H^{(l)},A)=\sigma(AH^{(l)}W^{(l)})
+$$
+​	其中，$W^{(l)}$ 是一个第$l$层的权重矩阵，$\sigma(\cdot)$是一个非线性函数，比如$Sigmoid$或者$RELU$，这个公式尽管看起来很简单，但实际上很有效。</p>
+<p>​	但是呢，这个公式有两个缺点：和矩阵$A$相乘意味着，对于一个节点，所以与其相连的节点的特征会被求和，但其自身的特征没有得到保留（除非这个节点有一个self loop)。为解决:这个问题，我们可以手动给每个节点加一个self loop：仅需要给邻接矩阵$A$加上一个单位矩阵。</p>
+<p>​	第二个缺点就是邻接矩阵$A$通常来说都没有标准化。所以，与矩阵$A$相乘后会彻底改变特征的区间。标准化后每行的和为1，例如，我们可以让邻接矩阵$A$乘上一个对角节点度矩阵$D$：$D^{(-1)}A$就可以解决这个问题了。这么操作其实是取了与一个节点以及与其相邻节点特征的均值。实践中，我们发现使用对称标准化 (Symmetric Normalization) 往往能取得更好的效果，例如: $D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，但这样的操作就不再是对相邻特征取均值了。这样我们就能得到一个传播规则：
+$$
+f(H^{(l)},A)=\sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{(l)})
+$$
+​	其中，$\hat{A}=A+I$，$I$是标准矩阵，$\hat{D}$是$\hat{A}$的对角节点度矩阵。</p>
+<p>​	关于对角节点度矩阵，可以参考：https://zh.wikipedia.org/wiki/度数矩阵。</p>
+<h1 id="graph-convolution-networks">Graph Convolution Networks</h1>
+<h3 id="1-spectral-based-graph-convolutional-networks">1. Spectral-based Graph Convolutional Networks</h3>
+<h4 id="定义">定义</h4>
+<p>​	正则化的拉普拉斯矩阵（Normalized graph Laplacian matrix）: $L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$</p>
+<p>其中，$D$是节点的度矩阵。</p>
+<p>​	这个拉普拉斯矩阵是对称半正定的（Symmetric positive semidefinite），可以分解为$L=U\Lambda U^T$，其中$U=[u_0,u_1,…,u_{n-1}]$是特征向量矩阵。$\Lambda: \Lambda_{ii}=\lambda_i$是特征值矩阵。</p>
+<p>​	于是，对于节点特征向量$x_i$，其图傅立叶变换定义为$\mathscr{F}(x)=U^Tx$，傅立叶逆变换定义为：$\mathscr{F}^{-1}(\hat{x})=U\hat{x}$，其中$\hat{x}$为傅立叶转化的结果。</p>
+<p>​	于是，对于节点向量的图卷积定义为：
+$$
+\begin{split}
+x*_Gg&amp;=\mathscr{F}^{-1}(\mathscr{F(x)\odot\mathscr{F}(g)})\<br>
+&amp;=U(U^Tx\odot U_Tg)
+\end{split}
+$$
+​	如果定义卷积核$g_\theta =diag(U^Tg)$，则上面的卷积操作可以简化为：
+$$
+x*_Gg_\theta=Ug_\theta U^Tx
+$$
+​	Spectral-based graph都是基于这个定义的，$g_\theta$可以理解为$L$特征值的一个函数，不同方法主要区别在于卷积核的选择不同。</p>
+<h4 id="spectral-cnn">Spectral CNN</h4>
+<p>​	 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>提出了Spectral CNN，选择卷积核$g_\theta = \Theta^k_{i,j}$，它是一个更新参数的对角矩阵(learnable diagonal matrix)，则其卷积层定义为：
+$$
+X_{:,j}^{k+1}=\sigma(\sum^{f_{k-1}}_{i=1}U\Theta^k_{i,j}U^TX^k_{:,i})\quad(j=1,2,&hellip;,f_k)
+$$
+​	其中，$X^k \in R^{N\times f_{k-1}}$是输入特征，$N$是节点数量，$f_{k-1}$是输入特征维度，$f_k$是输出特征维度，$\sigma$是一个非线性函数。</p>
+<h4 id="chebyshev-spectral-cnn-chebnet">Chebyshev Spectral CNN (ChebNet)</h4>
+<p>​	<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>提出ChebNet定义卷积核为特征值对焦矩阵的Chebyshev多项式，例如：$g_\theta =\sum_{i=1}^{K-1}\theta_iT_k(\tilde{\Lambda})$, 其中$\tilde{\Lambda}=2\Lambda/\lambda_{max}-I_N$，Chebyshev多项式定义为$T_k(x)=2xT_{k-1}(x)-T_{k-2}(x)$，$T_0(x)=1, T_1(x)=x$. 所以ChebNet的卷积层定义为：
+$$
+\begin{split}
+x*_Gg_\theta&amp;=U(\sum_{i=0}^{K-1}\theta_iT_k(\tilde{\Lambda}))U^Tx \<br>
+&amp;=\sum_{i=0}^{K-1}\theta_iT_i(\tilde{L})x
+\end{split}
+$$
+​	其中，$\tilde{L}=2L/\lambda_{max}-I_N$, 从中我们可以看出，这个方法避免了对矩阵$L$进行傅立叶变换，于是将计算复杂度从$O(N^3)$降到了$O(KM)$. 由于$T_i(\tilde{L})$是$\tilde{L}$的$i^{th}$ order 多项式，$T_i(\tilde{L})$对于每个节点局部操作。</p>
+<h4 id="first-order-of-chebnet-1stchebnet">First order of ChebNet (1stChebNet)</h4>
+<p>​	<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>提出了 first-order approximation of ChebNet，假设$K=1$， $\lambda_{max}=2$，则上式可以简化为：
+$$
+x*_Gg_\theta=\theta_0x-\theta_1D^{-\frac{1}{2}}AD^{-\frac{1}{2}}x
+$$
+​	为了防止产生过拟合，1stChebNet进一步简化了参数，假设$\theta=\theta_0=-\theta_1$，这样的话，上式被简化为：
+$$
+x*_Gg_\theta=\theta(I_n+D^{-\frac{1}{2}}AD^{-\frac{1}{2}})x
+$$
+​	于是，图卷积层可以定义为：
+$$
+X^{k+1}=\tilde{A}X^k\Theta
+$$
+​	其中，$\tilde{A}=I_N+D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$. 由于1stChebNet在节点分类任务中优秀的表现，一般定义它为默认的GCN模型。输出$X^{k+1}$中每一行是按权重聚合了周围节点信息的隐层表征，权重是由$\tilde{A}$的行向量决定的。1stChebNet一个主要的缺点是当图卷积层叠加的时候，由于每个节点都需要聚会周围节点的信息，计算量会指数级上升。为了解决这个问题，之后有很多工作可以参考[][]<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。</p>
+<p>​	Spectral GCN是基于对拉普拉斯矩阵进行奇异值分解，这一类方法有三个缺点：i). 图数据任何变动都会导致奇异值的变动，进一步影响结果；ii). 训练好的卷积核仅在当前图结构有效，很难迁移；iii). 奇异值分解的计算复杂度为$O(N^3)$，空间复杂度为$O(N^2)$.</p>
+<p>​	虽然ChebNet和1stChebNet的卷积核可以权值共享，但这一类方法还有另一个共同的特点就是需要把整个图结构同时加载，当图结构很大的时候这样的方法效率很低。</p>
+<h3 id="2-spatial-based-graph-convolutional-networks">2. Spatial-based Graph Convolutional Networks</h3>
+<p>​	受图像领域CNN的启发，我们可以把图数据转化为类似图一样的结构：其中每一个像素代表一个节点，相邻的像素在图结构中是相连的。这样的话，采用尺寸为$3\times3$的卷积核对每个channel进行卷积操作，同样可以将临近节点的信息聚合。</p>
+<p><img src="./images/nodes.png" alt="nodes"></p>
+<p>​	实践中，为了扩大模型的感受野（receptive field)，并获得深层的特征，我们可以叠加多层图卷积层。根据叠加卷积层的方式不一样，Spatial-based GCN又可以分成两类：recurrent-based和composition-based。</p>
+<p><img src="/Users/tommy/Desktop/GitHub/nlp%E7%AC%94%E8%AE%B0/images/spatial.png" alt="spatial"></p>
+<h4 id="recurrent-based-spatial-graph">Recurrent-based Spatial Graph</h4>
+<h5 id="a-graph-neural-networks-gnns">a. Graph Neural Networks (GNNs)</h5>
+<p>​	作为最早提出的模型之一，GNNs的想法很简单，就是不断聚集周围节点的信息，直到节点的隐层表示收敛。换句话说，就是让节点不断交换信息，直到信息平衡。为了解决异构图问题，Spatial-based GNNs定义为：
+$$
+h^t_v=f(\boldsymbol{l_v},\boldsymbol{l}<em>{co}[v],\boldsymbol{h}</em>{ne}^{t-1}[v],\boldsymbol{l}<em>{ne}[v])
+$$
+​	其中，$\boldsymbol{l_v}$代表节点$v$的属性，$\boldsymbol{l}</em>{co}[v]$代表节点$v$相连的边的属性，$\boldsymbol{h}<em>{ne}^{t}[v]$代表节点$v$, 在$t$时刻节点的邻近点的隐状态，$\boldsymbol{l}</em>{ne}[v]$代表节点$v$的邻近点的属性。</p>
+<p>​	为了保证收敛，$f(\cdot)$的选择必须是压缩映射(contraction mapping). 在图神经网络中，通常使用$Almeida-Pineda\quad algorithm$来训练。这个算法的主要想法是先$forward$模型，达到不动点(fixed points), 然后再反向传播。</p>
+<h5 id="b-gated-graph-neural-networks-ggnns">b. Gated Graph Neural Networks (GGNNs)</h5>
+<p>​	GGNNs使用了GRU来实现图网络，其定义为：
+$$
+\boldsymbol{h}_v^t=GRU(\boldsymbol{h}<em>v^{t-1},\sum</em>{u\in N(v)}\boldsymbol{Wh}_u^t)
+$$
+​	这个算法的好处是不需要加限制条件来保证收敛，但是缺点就是需要将整个图结构存到内存中，而且不能并行运算。（RNN类网络有的缺点它都有）</p>
+<h5 id="c-stochastic-steady-state-embedding-sse">c. Stochastic Steady-state Embedding (SSE)</h5>
+<p>​	为了提高效率，SSE异步地随机更新节点的隐表征，其定义为：
+$$
+\boldsymbol{h}_v^t=(1-\alpha)\boldsymbol{h}<em>v^{t-1}+\alpha\boldsymbol{W_1}\sigma(\boldsymbol{W_2}[x_v,\sum</em>{u \in N(v)}[\boldsymbol{h_u}^{t-1},\boldsymbol{x_u}]])
+$$
+​	虽然这样的定义考虑了节点的度，但是这样相加是否让算法稳定仍值得商榷。</p>
+<h4 id="composition-based-spatial-gcns">Composition Based Spatial GCNs</h4>
+<p>Composition-based GCNs 通过多层图卷积层更新节点的隐状态。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>J. Bruna, W. Zaremba, A. Szlam, and Y. LeCun, “Spectral net- works and locally connected networks on graphs,” in <em>Proceedings of International Conference on Learning Representations</em>, 2014. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>M. Defferrard, X. Bresson, and P. Vandergheynst, “Convolutional neural networks on graphs with fast localized spectral filtering,” in <em>Advances in Neural Information Processing Systems</em>, 2016, pp. 3844–3852. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>T. N. Kipf and M. Welling, “Semi-supervised classification with graph convolutional networks,” in <em>Proceedings of the International Conference on Learning Representations</em>, 2017. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>J. Chen, T. Ma, and C. Xiao, “Fastgcn: fast learning with graph convolutional networks via importance sampling,” in <em>Proceedings of the International Conference on Learning Representations</em>, 2018. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>J. Chen, J. Zhu, and L. Song, “Stochastic training of graph convolutional networks with variance reduction,” in <em>Proceedings of the International Conference on Machine Learning</em>, 2018, pp. 941– 949. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>W. Huang, T. Zhang, Y. Rong, and J. Huang, “Adaptive sampling towards fast graph representation learning,” in <em>Advances in Neu- ral Information Processing Systems</em>, 2018, pp. 4563–4572. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+
+        
+        <div class="section bottom-menu">
+<hr />
+<p>
+
+
+    
+
+    
+        
+            <a href="/travel">he&#39;s a traveller.</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/techniques">he&#39;s a coder.</a>
+        
+            &#183; 
+            <a href="/mis">he can cook and play the guitar.</a>
+        
+            &#183; 
+            <a href="/about">who is he?</a>
+        
+    
+    &#183; 
+    <a href="https://qhjqhj00.github.io/">
+        main
+    </a>
+
+</p></div>
+        
+
+        <div class="section footer">TOMMY CHIEN</div>
+    </div>
+</body>
+
+</html>

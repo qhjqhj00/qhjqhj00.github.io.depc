@@ -1,91 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Call me Tommy</title>
+    <title>Techniques on Call me Tommy</title>
     <link>https://qhjqhj00.github.io/techniques/</link>
-    <description>Recent content in Posts on Call me Tommy</description>
+    <description>Recent content in Techniques on Call me Tommy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate>
     
 	<atom:link href="https://qhjqhj00.github.io/techniques/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Video post</title>
-      <link>https://qhjqhj00.github.io/techniques/video-post/</link>
-      <pubDate>Fri, 16 Mar 2018 20:18:53 -0500</pubDate>
+      <title></title>
+      <link>https://qhjqhj00.github.io/techniques/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://qhjqhj00.github.io/techniques/video-post/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Pharetra magna ac placerat vestibulum lectus mauris. Eget lorem dolor sed viverra ipsum. Elementum nisi quis eleifend quam adipiscing. Aliquet nec ullamcorper sit amet risus. Auctor neque vitae tempus quam pellentesque. Tincidunt lobortis feugiat vivamus at augue.</description>
+      <guid>https://qhjqhj00.github.io/techniques/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <description>Basic Knowledge 1. Undirected Graph ​	目前，大部分图神经网络一定程度上有着类似的结构：图卷积网络。并且，卷积核在图的所有位置都共享参数。
+​	对于这一类型的模型，对于信号（特征）的目标函数为$\mathcal{G}=(\mathcal{V,\mathcal{E}})$，模型输入为：
+  对于节点$i$，其特征可以描述为$x_i$; 于是所$x$以的节点特征可以组成一个特征矩阵：$X$ : $(N \times D)$。其中，$N$是节点的数量，$D$是特征的维度。
+  一个可以表述图中节点连接关系的矩阵，通常是一个邻接矩阵。
+  ​	输出一个节点级的矩阵$Z$: $(N \times F)$，$F$是输出的特征维度。图级的输出可以由节点级输出经过池化或类似的操作得到。
+​	每一层网络可以写成一个非线性函数： $$ H^{(l+1)}=f(H^{(l)},A) $$ ​	其中，$H^{(0)}=X$，$H^{(L)}=Z$，$L$是网络层数。不同的模型的差别在于如何构造函数$f(\cdot , \cdot)$。
+2. Directed Graph 3. 一个简单的示例 ​	那么，就用一个最简单的线性函数来表示一层网络的非线性转化： $$ f(H^{(l)},A)=\sigma(AH^{(l)}W^{(l)}) $$ ​	其中，$W^{(l)}$ 是一个第$l$层的权重矩阵，$\sigma(\cdot)$是一个非线性函数，比如$Sigmoid$或者$RELU$，这个公式尽管看起来很简单，但实际上很有效。
+​	但是呢，这个公式有两个缺点：和矩阵$A$相乘意味着，对于一个节点，所以与其相连的节点的特征会被求和，但其自身的特征没有得到保留（除非这个节点有一个self loop)。为解决:这个问题，我们可以手动给每个节点加一个self loop：仅需要给邻接矩阵$A$加上一个单位矩阵。
+​	第二个缺点就是邻接矩阵$A$通常来说都没有标准化。所以，与矩阵$A$相乘后会彻底改变特征的区间。标准化后每行的和为1，例如，我们可以让邻接矩阵$A$乘上一个对角节点度矩阵$D$：$D^{(-1)}A$就可以解决这个问题了。这么操作其实是取了与一个节点以及与其相邻节点特征的均值。实践中，我们发现使用对称标准化 (Symmetric Normalization) 往往能取得更好的效果，例如: $D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$，但这样的操作就不再是对相邻特征取均值了。这样我们就能得到一个传播规则： $$ f(H^{(l)},A)=\sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}) $$ ​	其中，$\hat{A}=A+I$，$I$是标准矩阵，$\hat{D}$是$\hat{A}$的对角节点度矩阵。
+​	关于对角节点度矩阵，可以参考：https://zh.wikipedia.org/wiki/度数矩阵。
+Graph Convolution Networks 1. Spectral-based Graph Convolutional Networks 定义 ​	正则化的拉普拉斯矩阵（Normalized graph Laplacian matrix）: $L=I_n-D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$</description>
     </item>
     
     <item>
-      <title>Long Form Post</title>
-      <link>https://qhjqhj00.github.io/techniques/long-form-post/</link>
-      <pubDate>Thu, 08 Mar 2018 20:18:53 -0500</pubDate>
+      <title></title>
+      <link>https://qhjqhj00.github.io/techniques/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9C%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://qhjqhj00.github.io/techniques/long-form-post/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Pharetra magna ac placerat vestibulum lectus mauris. Eget lorem dolor sed viverra ipsum. Elementum nisi quis eleifend quam adipiscing. Aliquet nec ullamcorper sit amet risus. Auctor neque vitae tempus quam pellentesque. Tincidunt lobortis feugiat vivamus at augue.</description>
-    </item>
-    
-    <item>
-      <title>Image post</title>
-      <link>https://qhjqhj00.github.io/techniques/image-post/</link>
-      <pubDate>Mon, 19 Feb 2018 12:41:46 -0500</pubDate>
-      
-      <guid>https://qhjqhj00.github.io/techniques/image-post/</guid>
-      <description>Hello! I&#39;m a blog post with an image. Thanks to Open Graph and Twitter metadata, external links to this page will feature the image below.
-To make this happen, set the images parameter in your post&#39;s front-matter, like this:
-images: - /posts/ideas.png </description>
-    </item>
-    
-    <item>
-      <title>Code Poetry</title>
-      <link>https://qhjqhj00.github.io/techniques/code-poetry/</link>
-      <pubDate>Tue, 13 Feb 2018 13:56:12 -0500</pubDate>
-      
-      <guid>https://qhjqhj00.github.io/techniques/code-poetry/</guid>
-      <description>Pseudo code poem.
-if (this === that): try write_new_poem() except not_a_poet as e: return Or just one long line&amp;hellip;
-console.log(&amp;#39;Sometimes lines are waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaay toooooooooooooooooooo looooooooooooooooooooooooooooooong&amp;#39;) An embedded gist using shortcode:
- </description>
-    </item>
-    
-    <item>
-      <title>Dear Jane, regarding Mr. Bennet</title>
-      <link>https://qhjqhj00.github.io/techniques/dear-jane/</link>
-      <pubDate>Sun, 11 Feb 2018 12:34:41 -0500</pubDate>
-      
-      <guid>https://qhjqhj00.github.io/techniques/dear-jane/</guid>
-      <description>Chapter One It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
-However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.</description>
-    </item>
-    
-    <item>
-      <title>Oh, Alice</title>
-      <link>https://qhjqhj00.github.io/techniques/oh-alice/</link>
-      <pubDate>Fri, 09 Feb 2018 12:32:12 -0500</pubDate>
-      
-      <guid>https://qhjqhj00.github.io/techniques/oh-alice/</guid>
-      <description>Nor did such soothing scenes, however temporary, fail of at least as temporary an effect on Ahab. But if these secret golden keys did seem to open in him his own secret golden treasuries, yet did his breath upon them prove but tarnishing. Alice opened the door and found that it led into a small passage, not much larger than a rat-hole: she knelt down and looked along the passage into the loveliest garden you ever saw.</description>
-    </item>
-    
-    <item>
-      <title>A Poem</title>
-      <link>https://qhjqhj00.github.io/techniques/a-poem/</link>
-      <pubDate>Thu, 01 Feb 2018 12:35:11 -0500</pubDate>
-      
-      <guid>https://qhjqhj00.github.io/techniques/a-poem/</guid>
-      <description>Now pleasing sleep had seal&#39;d each mortal eye,
-Stretch&#39;d in the tents the Grecian leaders lie:
-The immortals slumber&#39;d on their thrones above;
-All, but the ever-wakeful eyes of Jove.(76)
-To honour Thetis&amp;rsquo; son he bends his care,
-And plunge the Greeks in all the woes of war:
-Then bids an empty phantom rise to sight,
-And thus commands the vision of the night.
-&amp;ldquo;Fly hence, deluding Dream! and light as air,(77)</description>
+      <guid>https://qhjqhj00.github.io/techniques/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9C%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/</guid>
+      <description>深度学习在自然语言处理中的关键技术  ​	本文主体部分翻译自Sebastian Ruder的推文，该推文在很多地方都有推荐。
+​	原文链接：http://ruder.io/deep-learning-nlp-best-practices/index.html#attention
+​	这篇推文总结了深度学习在自然处理语言中任务的实践范例，我在翻译中对内容有删减增改。平时我学习工作中每天都会阅读新公布的论文，一段时间后，发现自己收获有限，萌生了做笔记的想法（我的十八年求学生涯中从没做过笔记: ) )。
+​	翻译者 / 增补者：Hongjin
+1. 前述 ​	这篇推文总结了深度学习在自然处理语言中任务的实践范例。作者会定期更新本文，加入新涌现的实用技术和观点，也是我们对深度学习自然语言处理领域技术革新的追踪。
+​	过去几年，在我们这个领域有个经久不衰的笑话：遇到任何任务，直接上LSTM加注意力机制，节能获得一流的效果。而且这样的境况在过去几年几乎一尘不变。
+​	然而事情正在起变化，这一潭死水近来有了波澜，一些任务基准被新的模型刷新了。这也让我们这个行业一点点翻过LSTM这一页。面对这样的变化，我们应该以决绝的态度拥抱新模型，不要再拘于在LSTM的高楼上锦上添花，更不要挣扎于刷新某一个具体任务的成绩。
+​	阅读这篇推文前，你被假定对神经网络在自然语言处理中的应用已经有一些了解了，并对相关任务有过实践。最重要的，是对自然语言处理这个行业有着极大的热情。
+​	Tips: 不带缘由地假定什么是最好的有违公平性：依据是什么？是不是有更好的？所以，本文中提到的&amp;quot;最佳实践&amp;quot;一方面来自我个人的理解和经验，另一方面来自业界团队的评价。我也会尽可能为每个实践给出至少两个参考。
+2. 最佳实践 1). 词向量 ​	于情于理，词向量都是近来最广为人知的实践范例了。词向量对绝大多数自然语言任务裨益良多(Kim, 2014)[^f1]。词向量的最优维度在取决于不同任务：低维度的词向量往往适用于句法分析任务，如实体识别和词性识别(Melamud et al., 2016) (Plank et al., 2016) 12。而高维度词向量则更适用于语义分析任务，例如情感分析(Ruder et al., 2016)3。
+​	然而，近来随着语境化生成式词向量的兴起，句法分析任务的纪录榜单几乎都被高维度词向量模型占据了(Peters et al., 2018) (Devlin et al., 2018) (Akbik et al.,2018) (Baevski et al., 2019)4567。
+2). 深度 ​	尽管我们不会抵达视觉领域的层深，自然语言处理领域在深层网络上也略有进展。深度BiLSTM网络，通常由三四层那么深，在POS标注和语义角色标注任务上也取得了领先的成绩(Plank et al., 2016) (He et al.</description>
     </item>
     
   </channel>
