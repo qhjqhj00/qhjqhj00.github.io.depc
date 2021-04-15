@@ -6,10 +6,19 @@
     <description>Recent content on Tommy Chien (钱泓锦)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Mar 2021 17:20:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 11:45:12 +0800</lastBuildDate>
     
 	<atom:link href="https://qhjqhj00.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A_short_review_for_conversational_search</title>
+      <link>https://qhjqhj00.github.io/techniques/a_short_review_for_conversational_search/</link>
+      <pubDate>Tue, 16 Mar 2021 11:45:12 +0800</pubDate>
+      
+      <guid>https://qhjqhj00.github.io/techniques/a_short_review_for_conversational_search/</guid>
+      <description>In the 2021-Spring semaster, Prof. Dou suggestes me to try some conversational search. Before that, I know few about the domain. In the mean time, one of my courses (taught by Dou) requires a &amp;ldquo;short review&amp;rdquo; assignment. One stone two birds, I write the short review for conversational search in rush. As an ingénue to the domain and the review is written in an ad-hoc manner, there are ubiquitous technical errors, bias; grammar, wording typo.</description>
+    </item>
     
     <item>
       <title>Por Una Cabeza</title>
@@ -26,9 +35,9 @@
       <pubDate>Tue, 23 Feb 2021 13:42:49 -0500</pubDate>
       
       <guid>https://qhjqhj00.github.io/about/</guid>
-      <description>Hello, I&#39;m Tommy Chien (Hongjin Qian) (钱泓锦), currently a PhD student from Gaoling School of Artificial Intelligence, Renmin University of China, working on Natural Language Processing and Information Retrieval, supervised by Prof. Zhicheng Dou and Prof. Ji-Rong Wen. For further information, checkout my Linkedin.
+      <description>Hello, I&#39;m Tommy Chien (Hongjin Qian) (钱泓锦) (CV), currently a PhD student from Gaoling School of Artificial Intelligence, Renmin University of China, working on Natural Language Processing and Information Retrieval, supervised by Prof. Zhicheng Dou and Prof. Ji-Rong Wen. For further information, checkout my Linkedin.
 Publications: *: equal contribution
-Yafei Liu *, Hongjin Qian *, Hengpeng Xu, Jinmao Wei. Speaker or Listener? The Role of a Dialog Agent in Findings of the Association for Computational Linguistics: EMNLP 2020</description>
+Hongjin Qian, Xiaohe Li, Hanxun Zhong, Yu Guo, Yueyuan Ma, Yutao Zhu, Zhanliang Liu, Zhicheng Dou and Ji-Rong Wen. Pchatbot: A Large-Scale Dataset for Personalized Chatbot in SIGIR 2021</description>
     </item>
     
     <item>
