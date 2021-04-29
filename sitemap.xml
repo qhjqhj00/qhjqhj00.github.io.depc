@@ -1,82 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://qhjqhj00.github.io/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/travel/</loc>
-  <lastmod>2021-04-15T15:02:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/techniques/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/mis/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/music/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/about/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/techniques/a_short_review_for_conversational_search/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/techniques/graph-neural-network/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/music/por-una-cabeza/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/music/my-guitars/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/music/dream-wedding-finger-style/</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/resume.pdf</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://qhjqhj00.github.io/techniques/review.pdf</loc>
-  <lastmod>2021-04-15T15:02:12+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/techniques/a_short_review_for_conversational_search/</loc>
+    <lastmod>2021-03-16T11:45:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/</loc>
+    <lastmod>2021-03-16T11:45:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/music/</loc>
+    <lastmod>2021-03-08T17:25:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/classical-guitar/</loc>
+    <lastmod>2021-03-06T17:20:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/music/por-una-cabeza/</loc>
+    <lastmod>2021-03-06T17:20:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/</loc>
+    <lastmod>2021-03-06T17:20:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/about/</loc>
+    <lastmod>2021-02-23T13:42:49-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/techniques/</loc>
+    <lastmod>2020-02-21T12:21:57-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/graph/</loc>
+    <lastmod>2019-12-21T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/techniques/graph-neural-network/</loc>
+    <lastmod>2019-12-21T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/neural-network/</loc>
+    <lastmod>2019-12-21T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/acoustic-guitar/</loc>
+    <lastmod>2019-12-07T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/music/dream-wedding-finger-style/</loc>
+    <lastmod>2019-12-07T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/finger-style/</loc>
+    <lastmod>2019-12-07T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/techniques/key-techniques-in-nlp/</loc>
+    <lastmod>2019-08-05T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/tags/natural-language-processing/</loc>
+    <lastmod>2019-08-05T12:35:11-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/mis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qhjqhj00.github.io/travel/</loc>
+  </url>
+  
 </urlset>
